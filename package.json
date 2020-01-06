@@ -7,15 +7,7 @@
       "resolved": "https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz",
       "version": "0.4.0"
     },
-    "axios": {
-      "integrity": "sha512-1uvKqKQta3KBxIz14F2v06AEHZ/dIoeKfbTRkK1E5oqjDnuEerLmYTgJB5AiQZHJcljpg1TuRzdjDR06qNk0DQ==",
-      "requires": {
-        "follow-redirects": "1.5.10",
-        "is-buffer": "^2.0.2"
-      },
-      "resolved": "https://registry.npmjs.org/axios/-/axios-0.19.0.tgz",
-      "version": "0.19.0"
-    },
+    "axios": "^0.19.0",
     "busboy": {
       "integrity": "sha512-y7tTxhGKXcyBxRKAni+awqx8uqaJKrSFSNFSeRG5CsWNdmy2BIK+6VGWEW7TZnIO/533mtMEA4rOevQV815YJw==",
       "requires": {
@@ -61,16 +53,7 @@
       "resolved": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.5.10.tgz",
       "version": "1.5.10"
     },
-    "form-data": {
-      "integrity": "sha512-CKMFDglpbMi6PyN+brwB9Q/GOw0eAnsrEZDgcsH5Krhz5Od/haKHAX0NmQfha2zPPz0JpWzA7GJHGSnvCRLWsg==",
-      "requires": {
-        "asynckit": "^0.4.0",
-        "combined-stream": "^1.0.8",
-        "mime-types": "^2.1.12"
-      },
-      "resolved": "https://registry.npmjs.org/form-data/-/form-data-3.0.0.tgz",
-      "version": "3.0.0"
-    },
+    "form-data": "^3.0.0",
     "is-buffer": {
       "integrity": "sha512-Kq1rokWXOPXWuaMAqZiJW4XxsmD9zGx9q4aePabbn3qCRGedtH7Cm+zV8WETitMfu1wdh+Rvd6w5egwSngUX2A==",
       "resolved": "https://registry.npmjs.org/is-buffer/-/is-buffer-2.0.4.tgz",
