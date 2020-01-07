@@ -23,8 +23,9 @@ var info = {
 
 const POS_TICKET = 0,
 	  POS_OPEN_TIME = 1,
-	  POS_LOTS = 2,
-	  POS_PROFIT = 3;
+	  POS_TYPE = 2,
+	  POS_LOTS = 3,
+	  POS_PROFIT = 4;
 
 var info_positions = new Array();
 
@@ -35,7 +36,7 @@ function try_send_data_and_remove_file(){
 	if(fs.existsSync(MT_SCREENSHOT_DAT)){
 		console.log("Reading file screenshot.dat")
 		var screenshot_data = fs.readFile(MT_SCREENSHOT_DAT, function read(err, data){
-			if( err ) throw err;
+			if( err ) console.log(err);
 			content = data;
 
 			let data_array = content.toString().split('\r\n');
@@ -50,12 +51,14 @@ function try_send_data_and_remove_file(){
 					var position = {
 						order_ticket: 0,
 						order_open_time: '',
+						order_type: '',
 						order_lots: 0.0,
 						order_profit: 0.0
 					}
 					var pos = value.split(data_separator_pos)
 					position.order_ticket = pos[POS_TICKET]
 					position.order_open_time = pos[POS_OPEN_TIME]
+					position.order_type = pos[POS_TYPE]
 					position.order_lots = pos[POS_LOTS]
 					position.order_profit = pos[POS_PROFIT]
 					info_positions.push(position)
@@ -65,6 +68,7 @@ function try_send_data_and_remove_file(){
 			info.positions = info_positions;
 			console.log(info);
 			send_data(info);
+			info_positions = new Array();
 			fs.unlinkSync(MT_SCREENSHOT_DAT);
 		});			
 	}	
