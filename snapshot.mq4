@@ -8,7 +8,7 @@
 #property version   "1.00"
 #property strict
 
-string USERNAME = "test";
+string USERNAME = "ale";
 const string DATA_PATH = TerminalInfoString(TERMINAL_DATA_PATH);
 
 //+------------------------------------------------------------------+
@@ -29,6 +29,7 @@ int write_data_file()
    if(res != INVALID_HANDLE){
       Print("File " + filename + " aperto correttamente");
       FileWrite(res, "username#"+USERNAME);
+      FileWrite(res, "pair#"+Symbol());
       FileWrite(res, "time#"+TimeToString(TimeLocal(), TIME_DATE | TIME_SECONDS));
       FileWrite(res, "filename#"+take_screenshot());
       FileWrite(res, "account_balance#"+AccountBalance());

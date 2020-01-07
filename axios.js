@@ -10,6 +10,7 @@ const data_separator_pos = '_'
 
 var info = {
 	username:'',
+	pair:'',
 	time:'', 
 	filename: '',
 	account_balance: 0.0, 		// Saldo
@@ -36,7 +37,11 @@ function try_send_data_and_remove_file(){
 	if(fs.existsSync(MT_SCREENSHOT_DAT)){
 		console.log("Reading file screenshot.dat")
 		var screenshot_data = fs.readFile(MT_SCREENSHOT_DAT, function read(err, data){
-			if( err ) console.log(err);
+			if( err ){
+				console.log("Errore lettura file")
+				console.log(err);
+				return false;
+			}
 			content = data;
 
 			let data_array = content.toString().split('\r\n');
@@ -83,6 +88,7 @@ function send_data(info){
 
 	let data = new FormData();
 	data.append('username', info.username)
+	data.append('pair', info.pair)
 	data.append('filename', info.filename)
 	data.append('time', info.time)
 	data.append('account_balance', info.account_balance)
