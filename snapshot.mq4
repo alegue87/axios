@@ -30,7 +30,7 @@ int write_data_file()
       Print("File " + filename + " aperto correttamente");
       FileWrite(res, "username#"+USERNAME);
       FileWrite(res, "pair#"+Symbol());
-      FileWrite(res, "period#",Period());
+      FileWrite(res, "period#"+Period());
       FileWrite(res, "time#"+TimeToString(TimeLocal(), TIME_DATE | TIME_SECONDS));
       FileWrite(res, "filename#"+take_screenshot());
       FileWrite(res, "account_balance#"+AccountBalance());
@@ -63,7 +63,8 @@ void save_positions(int res)
       else 
          order_type = "other";
       FileWrite(res,"position#"+ 
-         OrderTicket()+"_"+OrderOpenTime()+"_"+order_type+"_"+OrderLots()+"_"+OrderProfit());
+         OrderTicket()+"_"+OrderOpenTime()+"_"+order_type+"_"+OrderLots()+"_"+OrderProfit()+"_"+
+         OrderSwap()+"_"+OrderCommission());
    }
 }
 //+------------------------------------------------------------------+

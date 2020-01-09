@@ -27,7 +27,9 @@ const POS_TICKET = 0,
 	  POS_OPEN_TIME = 1,
 	  POS_TYPE = 2,
 	  POS_LOTS = 3,
-	  POS_PROFIT = 4;
+	  POS_PROFIT = 4,
+	  POS_SWAP = 5,
+	  POS_COMMISSION = 6;
 
 var info_positions = new Array();
 
@@ -67,6 +69,8 @@ function try_send_data_and_remove_file(){
 					position.order_type = pos[POS_TYPE]
 					position.order_lots = pos[POS_LOTS]
 					position.order_profit = pos[POS_PROFIT]
+					position.order_swap = pos[POS_SWAP]
+					position.order_commission = pos[POS_COMMISSION]
 					info_positions.push(position)
 				}
 				
