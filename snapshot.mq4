@@ -30,6 +30,7 @@ int write_data_file()
       Print("File " + filename + " aperto correttamente");
       FileWrite(res, "username#"+USERNAME);
       FileWrite(res, "pair#"+Symbol());
+      FileWrite(res, "period#",Period());
       FileWrite(res, "time#"+TimeToString(TimeLocal(), TIME_DATE | TIME_SECONDS));
       FileWrite(res, "filename#"+take_screenshot());
       FileWrite(res, "account_balance#"+AccountBalance());

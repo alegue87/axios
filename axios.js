@@ -11,6 +11,7 @@ const data_separator_pos = '_'
 var info = {
 	username:'',
 	pair:'',
+	period:'',
 	time:'', 
 	filename: '',
 	account_balance: 0.0, 		// Saldo
@@ -89,6 +90,7 @@ function send_data(info){
 	let data = new FormData();
 	data.append('username', info.username)
 	data.append('pair', info.pair)
+	data.append('period', info.period)
 	data.append('filename', info.filename)
 	data.append('time', info.time)
 	data.append('account_balance', info.account_balance)
