@@ -37,7 +37,7 @@ setInterval(try_send_data_and_remove_file, 1000);
 
 function try_send_data_and_remove_file(){
 	console.log("Search file screenshot.dat..")
-	if(fs.existsSync(MT_SCREENSHOT_DAT)){
+	if(fs.existsSync(MT_SCREENSHOT_DAT) && fs.lstatSync(MT_SCREENSHOT_DAT).isFile()){
 		console.log("Reading file screenshot.dat")
 		var screenshot_data = fs.readFile(MT_SCREENSHOT_DAT, function read(err, data){
 			if( err ){
