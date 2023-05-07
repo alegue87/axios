@@ -7,7 +7,7 @@
       "resolved": "https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz",
       "version": "0.4.0"
     },
-    "axios": "^0.19.0",
+    "axios": "^0.21.2",
     "busboy": {
       "integrity": "sha512-y7tTxhGKXcyBxRKAni+awqx8uqaJKrSFSNFSeRG5CsWNdmy2BIK+6VGWEW7TZnIO/533mtMEA4rOevQV815YJw==",
       "requires": {
